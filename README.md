@@ -3,7 +3,7 @@
 
 Also known as BRUHIFF or BRUH.
 
-![Example](https://cdn.discordapp.com/attachments/1074408238939906220/1130764354661384192/image.png)
+<img width="659" height="709" alt="image" src="https://github.com/user-attachments/assets/ba39bd4f-61cd-4ca8-9559-e156f8b00fb4" />
 
 # How to
 1. Download the repo / `git clone` it.
@@ -16,11 +16,11 @@ Also known as BRUHIFF or BRUH.
 1. Double-click on `image.bruh` using your File Explorer.
 2. Click on `More Apps`
 
-![More Apps](https://cdn.discordapp.com/attachments/1074408238939906220/1130765375693406258/image.png)
+<img width="392" height="497" alt="image" src="https://github.com/user-attachments/assets/c58b5e41-a939-45d5-9b03-b4899b506e98" />
 
 3. Click on `Choose app from this PC`
 
-![Choose app](https://cdn.discordapp.com/attachments/1074408238939906220/1130765548813308034/image.png)
+<img width="391" height="518" alt="image" src="https://github.com/user-attachments/assets/c9990ea9-4d86-4c59-8d1f-1fa41d928fa8" />
 
 Tip: tick "Always use this app to open .bruh files"
 
