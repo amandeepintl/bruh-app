@@ -2,6 +2,11 @@
 name = "bruh"
 version = "0.1.0"
 edition = "2021"
+description = "A lightweight BRUH image codec and CLI for compiling and decoding image files"
+license = "MIT"
+repository = "https://github.com/amandeepintl/bruh-BETTER"
+keywords = ["image", "codec", "cli", "bruh"]
+categories = ["command-line-utilities", "multimedia::images"]
 
 [lib]
 name = "bruh"
