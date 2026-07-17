@@ -41,14 +41,23 @@ impl BruhImage {
         fs::write(path, output).map_err(|e| format!("failed to write .bruh file: {e}"))
     }
 
-    pub fn metadata(path: &Path) -> Result<(u32, u32, usize), String> {
-        let bytes = fs::read(path).map_err(|e| format!("failed to read .bruh file: {e}"))?;
+    pub fn validate_header(bytes: &[u8]) -> Result<(), String> {
         if bytes.len() < 14 {
             return Err("file is too small to be a valid .bruh image".into());
         }
         if &bytes[0..4] != b"BTTR" {
             return Err("invalid .bruh magic header".into());
         }
+        let version = bytes[4];
+        if version != 1 {
+            return Err(format!("unsupported .bruh format version: {}", version));
+        }
+        Ok(())
+    }
+
+    pub fn metadata(path: &Path) -> Result<(u32, u32, usize), String> {
+        let bytes = fs::read(path).map_err(|e| format!("failed to read .bruh file: {e}"))?;
+        Self::validate_header(&bytes)?;
         let width = u32::from_le_bytes(bytes[6..10].try_into().unwrap());
         let height = u32::from_le_bytes(bytes[10..14].try_into().unwrap());
         let rgba_len = (width as usize) * (height as usize) * 4;
