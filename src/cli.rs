@@ -13,13 +13,17 @@ pub fn run(args: Vec<String>) -> Result<(), i32> {
         return Err(1);
     }
 
+    let is_quiet = args.iter().any(|a| a == "--quiet" || a == "-q");
+
     let command = &args[1];
     if command == "--help" || command == "-h" || command == "help" {
         print_usage();
         return Ok(());
     }
     if command == "--version" || command == "version" {
-        println!("bruh 0.1.0");
+        if !is_quiet {
+            println!("bruh 0.1.0");
+        }
         return Ok(());
     }
     let input = PathBuf::from(args.get(2).unwrap_or(&String::new()));
