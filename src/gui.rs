@@ -17,6 +17,10 @@ impl ImageViewer {
             texture: None,
         })
     }
+
+    pub fn clear_cache(&mut self) {
+        self.texture = None;
+    }
 }
 
 impl App for ImageViewer {
