@@ -14,7 +14,7 @@ pub fn run(args: Vec<String>) -> Result<(), i32> {
     }
 
     let is_quiet = args.iter().any(|a| a == "--quiet" || a == "-q");
-    let is_preview = args.iter().any(|a| a == "--preview" || a == "-p");
+    let _is_preview = args.iter().any(|a| a == "--preview" || a == "-p");
 
     let command = &args[1];
     if command == "--help" || command == "-h" || command == "help" {
