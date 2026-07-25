@@ -32,29 +32,23 @@
 ## 📸 Screenshots & Highlights
 
 ### 🖼️ Interactive Image Viewer & Save Workflow
-> Zoom, pan, rotate 90° CW, flip horizontally/vertically, and export to PNG or overwrite files with a non-destructive interactive save workflow.
+Zoom, pan, rotate 90° CW, flip horizontally/vertically, and export to PNG or overwrite files with a non-destructive interactive save workflow.
 
-<p align="center">
-  <img src="assets/viewer.png" width="850" alt="Interactive Image Viewer">
-</p>
+![Interactive Image Viewer](assets/viewer.png)
 
 ---
 
 ### 📂 100% Responsive Thumbnail Gallery Grid
-> Reflowing dynamic thumbnail grid layout that scales seamlessly based on window width with lazy image caching and instant folder navigation.
+Reflowing dynamic thumbnail grid layout that scales seamlessly based on window width with lazy image caching and instant folder navigation.
 
-<p align="center">
-  <img src="assets/gallery.png" width="850" alt="Responsive Gallery Grid">
-</p>
+![Responsive Gallery Grid](assets/gallery.png)
 
 ---
 
 ### ⚡ 1-Click Folder Batch Converter
-> Convert entire folders of standard images (`.png`, `.jpg`, `.webp`) to `.bruh` format in parallel with optional source file auto-deletion.
+Convert entire folders of standard images (`.png`, `.jpg`, `.webp`) to `.bruh` format in parallel with optional source file auto-deletion.
 
-<p align="center">
-  <img src="assets/batch.png" width="850" alt="Batch Image Converter">
-</p>
+![Batch Image Converter](assets/batch.png)
 
 ---
 

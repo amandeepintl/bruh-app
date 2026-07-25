@@ -6,3 +6,7 @@
 *.gif
 *.bmp
 *.webp
+
+# Unignore README documentation assets
+!assets/
+!assets/*
