@@ -29,7 +29,7 @@
 
 ---
 
-## 📸 Interface & Features Showcase
+## 📸 Interface Showcase
 
 ### 🏠 Launcher & Settings Screen
 Drag & drop file input, 3 quick action buttons (`Open Image File`, `Batch Convert`, `Open Folder Gallery`), 10-item scrollable Recent Files History, and persistent Application Settings.
