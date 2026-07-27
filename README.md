@@ -51,10 +51,12 @@ Automated installer setup wizard to configure Windows file associations, context
 
 ---
 
-### 🧩 Native Windows File Explorer Thumbnail Provider
-Real-time thumbnail preview rendering for `.bruh` files directly inside Windows File Explorer.
+### 🧩 Native Windows File Explorer Thumbnail Provider (`bruh_thumb.dll`)
+BRUH-BETTER registers a C-compatible COM Shell Extension (`bruh_thumb.dll`) to render **real-time image thumbnails** and custom file icon badges for `.bruh` files directly inside Windows File Explorer!
 
-![Windows File Explorer Thumbnail Preview](assets/thumbnail.png)
+<p align="center">
+  <img src="assets/thumbnail.png" alt="Windows File Explorer Native Thumbnail Preview">
+</p>
 
 ---
 
