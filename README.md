@@ -58,6 +58,15 @@ Fullscreen viewport displaying `.bruh`, `.png`, `.jpg`, `.webp`, `.bmp`, and `.g
 
 ---
 
+### ℹ️ Image Information & Metadata Inspector Modal
+Interactive popup displaying image dimensions, compression format (`BRUH-BETTER Zlib Compressed`), color space (`RGBA8`), exact file size, full file path, and folder index.
+
+<p align="center">
+  <img src="assets/info.png" width="480" alt="Image Information & Metadata Inspector Modal">
+</p>
+
+---
+
 ### 📂 100% Responsive Thumbnail Gallery Grid
 Reflowing dynamic thumbnail grid layout that scales seamlessly based on window width with lazy image caching, format badges, and header controls (`⚡ Batch Convert`, `📂 Change Folder`).
 
