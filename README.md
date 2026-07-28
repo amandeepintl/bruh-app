@@ -49,6 +49,15 @@ Fullscreen viewport displaying `.bruh`, `.png`, `.jpg`, `.webp`, `.bmp`, and `.g
 
 ---
 
+### 📂 100% Responsive Thumbnail Gallery Grid
+Reflowing dynamic thumbnail grid layout that scales seamlessly based on window width with lazy image caching, format badges, and header controls (`⚡ Batch Convert`, `📂 Change Folder`).
+
+<p align="center">
+  <img src="assets/gallery.png" width="880" alt="100% Responsive Thumbnail Gallery Grid">
+</p>
+
+---
+
 ### 🛠️ Toolbar Header Controls
 Complete toolbar featuring `Fit`, `Zoom (+/-)`, `Rotate 90° CW`, `Flip H`, `Flip V`, `Save`, `Copy`, `Export PNG`, and `Prev` / `Next` folder navigation.
 
