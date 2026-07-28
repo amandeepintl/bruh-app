@@ -36,6 +36,14 @@
 ---
 ## 📸 Interface Showcase
 ---
+
+### 🏠 Main Launcher & Application Settings
+Drag & drop file input, 3 quick action buttons (`Open Image File`, `Batch Convert`, `Open Folder Gallery`), 10-item scrollable Recent Files History, and persistent Application Settings.
+
+![BRUH-BETTER Main Launcher & Application Settings](assets/launcher.png)
+
+---
+
 ### 🖼️ Interactive Image Viewer
 Fullscreen viewport displaying `.bruh`, `.png`, `.jpg`, `.webp`, `.bmp`, and `.gif` images with real-time zoom, drag/pan, and smooth navigation.
 
