@@ -27,6 +27,12 @@
 
 **BRUH-BETTER** is a high-performance binary image container toolkit written in Rust. It features a custom Zlib-compressed binary file format (`.bruh`), an interactive GPU-accelerated image viewer, a 100% responsive thumbnail gallery grid, a 1-click batch image converter, persistent application settings, and native Windows Explorer shell extension integration.
 
+<p align="center">
+  <img src="assets/thumbnail.png" alt="Native Windows File Explorer Thumbnail Preview">
+  <br>
+  <i>Native Windows File Explorer preview showing real-time .bruh image thumbnails and file icon badges!</i>
+</p>
+
 ---
 ## 📸 Interface Showcase
 ---
