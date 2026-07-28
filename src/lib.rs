@@ -41,7 +41,7 @@ impl BruhImage {
         fs::write(path, output).map_err(|e| format!("failed to write .bruh file: {e}"))
     }
 
-    pub fn decode_from_bruh(path: &Path) -> Result<Self, String> {
+    pub fn metadata(path: &Path) -> Result<(u32, u32, usize), String> {
         let bytes = fs::read(path).map_err(|e| format!("failed to read .bruh file: {e}"))?;
         if bytes.len() < 14 {
             return Err("file is too small to be a valid .bruh image".into());
@@ -55,7 +55,14 @@ impl BruhImage {
         if bytes.len() != 14 + rgba_len {
             return Err(format!("expected {} payload bytes, found {}", rgba_len, bytes.len() - 14));
         }
-        let rgba = bytes[14..].to_vec();
+        Ok((width, height, rgba_len))
+    }
+
+    pub fn decode_from_bruh(path: &Path) -> Result<Self, String> {
+        let bytes = fs::read(path).map_err(|e| format!("failed to read .bruh file: {e}"))?;
+        let (width, height, _) = Self::metadata(path)?;
+        let rgba_len = (width as usize) * (height as usize) * 4;
+        let rgba = bytes[14..14 + rgba_len].to_vec();
         Self::new(width, height, rgba)
     }
 
@@ -101,5 +108,30 @@ mod tests {
         assert_eq!(decoded.rgba, image.rgba);
         decoded.save_as_png(&output).unwrap();
         assert!(output.exists());
+    }
+
+    #[test]
+    fn metadata_report_is_available_for_valid_files() {
+        let temp_dir = std::env::temp_dir().join("bruh-test-meta");
+        let _ = fs::create_dir_all(&temp_dir);
+        let bruh = temp_dir.join("meta.bruh");
+
+        let image = BruhImage::new(2, 2, vec![0u8; 16]).unwrap();
+        image.encode_to_bruh(&bruh).unwrap();
+
+        let metadata = BruhImage::metadata(&bruh).unwrap();
+        assert_eq!(metadata.0, 2);
+        assert_eq!(metadata.1, 2);
+        assert_eq!(metadata.2, 16);
+    }
+
+    #[test]
+    fn malformed_header_is_rejected() {
+        let temp_dir = std::env::temp_dir().join("bruh-test-bad");
+        let _ = fs::create_dir_all(&temp_dir);
+        let bad = temp_dir.join("bad.bruh");
+        fs::write(&bad, b"not-a-bruh-file").unwrap();
+
+        assert!(BruhImage::metadata(&bad).is_err());
     }
 }
