@@ -27,15 +27,9 @@
 
 **BRUH-BETTER** is a high-performance binary image container toolkit written in Rust. It features a custom Zlib-compressed binary file format (`.bruh`), an interactive GPU-accelerated image viewer, a 100% responsive thumbnail gallery grid, a 1-click batch image converter, persistent application settings, and native Windows Explorer shell extension integration.
 
-<p align="center">
-  <img src="assets/thumbnail.png" width="180" alt="Native Windows File Explorer Thumbnail Preview">
-  <br>
-  <i><b>Windows File Explorer Integration:</b> Real-time native image thumbnails & icon overlay badges powered by <code>bruh_thumb.dll</code>!</i>
-</p>
-
 ---
 
-## 📸 Interface & Showcase
+## 📸 Interface Showcase
 
 ### 🏠 Main Launcher & Application Settings
 Drag & drop file input, 3 quick action buttons (`Open Image File`, `Batch Convert`, `Open Folder Gallery`), 10-item scrollable Recent Files History, and persistent Application Settings.
@@ -73,7 +67,18 @@ Automated installer setup wizard to configure Windows file associations, context
 
 ---
 
-## 🚀 Complete Feature Breakdown
+### 🧩 Native Windows File Explorer Thumbnail Provider (`bruh_thumb.dll`)
+BRUH-BETTER registers a C-compatible COM Shell Extension (`bruh_thumb.dll`) to render **real-time image thumbnails** and custom file icon badges for `.bruh` files directly inside Windows File Explorer!
+
+<p align="center">
+  <img src="assets/thumbnail.png" width="180" alt="Windows File Explorer Native Thumbnail Preview">
+  <br>
+  <i>Real-time native image thumbnail & file icon badge in Windows File Explorer</i>
+</p>
+
+---
+
+## 🚀 Complete Feature List
 
 - **⚡ Zlib Binary Container Codec (`.bruh`)**: High-ratio compression with 14-byte `BTTR` binary magic header.
 - **🖼️ Interactive GPU Viewer**: Dynamic zoom, pan, 90° rotation, `Flip H`, `Flip V`, keyboard arrow navigation.
