@@ -40,6 +40,15 @@ Drag & drop file input, 3 quick action buttons (`Open Image File`, `Batch Conver
 
 ---
 
+### ⚙️ Launcher Application Settings & Maintenance
+Persistent configuration panel to toggle non-BRUH conversion warnings (`suppress_modal.txt`), auto-deletion settings, 1-click `⚡ Re-Register File Association`, and `🗑 Clear Recent Files`.
+
+<p align="center">
+  <img src="assets/settings.png" width="680" alt="Persistent Application Settings Card">
+</p>
+
+---
+
 ### 🖼️ Interactive Image Viewer & Canvas Controls
 Fullscreen viewport displaying `.bruh`, `.png`, `.jpg`, `.webp`, `.bmp`, and `.gif` images with real-time zoom, drag/pan, and smooth navigation.
 
