@@ -1,12 +1,27 @@
 use std::path::PathBuf;
 
+fn print_usage() {
+    println!("Usage:");
+    println!("  bruh compile <input> [output]");
+    println!("  bruh decode <input> [output]");
+    println!("  bruh --help | bruh --version");
+}
+
 pub fn run(args: Vec<String>) -> Result<(), i32> {
     if args.len() < 2 {
-        eprintln!("usage: bruh <compile|decode> <input> [output]");
+        print_usage();
         return Err(1);
     }
 
     let command = &args[1];
+    if command == "--help" || command == "-h" || command == "help" {
+        print_usage();
+        return Ok(());
+    }
+    if command == "--version" || command == "version" {
+        println!("bruh 0.1.0");
+        return Ok(());
+    }
     let input = PathBuf::from(args.get(2).unwrap_or(&String::new()));
     let output = args.get(3).map(PathBuf::from).unwrap_or_else(|| {
         if command == "compile" {
