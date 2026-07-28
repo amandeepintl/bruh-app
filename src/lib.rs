@@ -147,4 +147,12 @@ mod tests {
 
         assert!(BruhImage::metadata(&bad).is_err());
     }
+
+    #[test]
+    fn test_opaque_check() {
+        let opaque = BruhImage::new(1, 1, vec![255, 0, 0, 255]).unwrap();
+        assert!(opaque.is_opaque());
+        let alpha = BruhImage::new(1, 1, vec![255, 0, 0, 128]).unwrap();
+        assert!(!alpha.is_opaque());
+    }
 }
