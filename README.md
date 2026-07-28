@@ -1,6 +1,10 @@
 # BRUH-BETTER
 
-BRUH-BETTER is a small image container format and command-line tool for converting common image files into a `.bruh` archive and back again.
+BRUH-BETTER is a lightweight image container format and command-line tool for converting common image files into a `.bruh` archive and back again.
+
+## About
+
+BRUH-BETTER provides a simple, testable workflow for compiling images to `.bruh` files and decoding them back to PNG. It is intended for experimentation, file exchange, and lightweight image packaging without relying on heavier tooling.
 
 ## What changed in this cleanup
 
