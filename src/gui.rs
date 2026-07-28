@@ -31,6 +31,8 @@ impl App for ImageViewer {
 pub fn show(path: &Path) -> Result<(), String> {
     let options = eframe::NativeOptions {
         initial_window_size: Some(egui::vec2(640.0, 480.0)),
+        min_window_size: Some(egui::vec2(320.0, 240.0)),
+        resizable: true,
         ..Default::default()
     };
     eframe::run_native(
