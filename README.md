@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="120" alt="BRUH-BETTER Logo">
+  <img src="assets/logo.png" width="128" height="128" alt="BRUH-BETTER Logo">
 </p>
 
 <h1 align="center">BRUH-BETTER</h1>
@@ -28,53 +28,52 @@
 **BRUH-BETTER** is a high-performance binary image container toolkit written in Rust. It features a custom Zlib-compressed binary file format (`.bruh`), an interactive GPU-accelerated image viewer, a 100% responsive thumbnail gallery grid, a 1-click batch image converter, persistent application settings, and native Windows Explorer shell extension integration.
 
 <p align="center">
-  <img src="assets/thumbnail.png" alt="Native Windows File Explorer Thumbnail Preview">
+  <img src="assets/thumbnail.png" width="180" alt="Native Windows File Explorer Thumbnail Preview">
   <br>
-  <i>Native Windows File Explorer preview showing real-time .bruh image thumbnails and file icon badges!</i>
+  <i><b>Windows File Explorer Integration:</b> Real-time native image thumbnails & icon overlay badges powered by <code>bruh_thumb.dll</code>!</i>
 </p>
 
 ---
-## 📸 Interface Showcase
----
+
+## 📸 Interface & Showcase
 
 ### 🏠 Main Launcher & Application Settings
 Drag & drop file input, 3 quick action buttons (`Open Image File`, `Batch Convert`, `Open Folder Gallery`), 10-item scrollable Recent Files History, and persistent Application Settings.
 
-![BRUH-BETTER Main Launcher & Application Settings](assets/launcher.png)
+<p align="center">
+  <img src="assets/launcher.png" width="880" alt="BRUH-BETTER Main Launcher & Application Settings">
+</p>
 
 ---
 
-### 🖼️ Interactive Image Viewer
+### 🖼️ Interactive Image Viewer & Canvas Controls
 Fullscreen viewport displaying `.bruh`, `.png`, `.jpg`, `.webp`, `.bmp`, and `.gif` images with real-time zoom, drag/pan, and smooth navigation.
 
-![Interactive Image Viewer](assets/viewer.png)
+<p align="center">
+  <img src="assets/viewer.png" width="880" alt="Interactive Image Viewer">
+</p>
 
 ---
 
 ### 🛠️ Toolbar Header Controls
 Complete toolbar featuring `Fit`, `Zoom (+/-)`, `Rotate 90° CW`, `Flip H`, `Flip V`, `Save`, `Copy`, `Export PNG`, and `Prev` / `Next` folder navigation.
 
-![Viewer Toolbar Controls](assets/toolbar.png)
+<p align="center">
+  <img src="assets/toolbar.png" width="880" alt="Viewer Toolbar Controls">
+</p>
 
 ---
 
 ### ⚙️ Setup & Integration Wizard (`bruh-setup.exe`)
 Automated installer setup wizard to configure Windows file associations, context menu options, desktop shortcuts, PATH environment variables, and shell thumbnail extensions.
 
-![BRUH-BETTER Setup Wizard](assets/installer.png)
-
----
-
-### 🧩 Native Windows File Explorer Thumbnail Provider (`bruh_thumb.dll`)
-BRUH-BETTER registers a C-compatible COM Shell Extension (`bruh_thumb.dll`) to render **real-time image thumbnails** and custom file icon badges for `.bruh` files directly inside Windows File Explorer!
-
 <p align="center">
-  <img src="assets/thumbnail.png" alt="Windows File Explorer Native Thumbnail Preview">
+  <img src="assets/installer.png" width="760" alt="BRUH-BETTER Setup Wizard">
 </p>
 
 ---
 
-## 🚀 Complete Feature List
+## 🚀 Complete Feature Breakdown
 
 - **⚡ Zlib Binary Container Codec (`.bruh`)**: High-ratio compression with 14-byte `BTTR` binary magic header.
 - **🖼️ Interactive GPU Viewer**: Dynamic zoom, pan, 90° rotation, `Flip H`, `Flip V`, keyboard arrow navigation.
