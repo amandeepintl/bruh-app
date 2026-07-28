@@ -24,6 +24,10 @@ impl BruhImage {
         Ok(Self { width, height, rgba })
     }
 
+    pub fn is_opaque(&self) -> bool {
+        self.rgba.chunks_exact(4).all(|chunk| chunk[3] == 255)
+    }
+
     pub fn from_image_file(path: &Path) -> Result<Self, String> {
         let img = image::open(path).map_err(|e| format!("failed to open image: {e}"))?;
         let rgba_img = img.to_rgba8();
