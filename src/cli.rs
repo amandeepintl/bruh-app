@@ -8,6 +8,26 @@ fn print_usage() {
 }
 
 pub fn run(args: Vec<String>) -> Result<(), i32> {
+    let exe_name = std::env::current_exe()
+        .ok()
+        .and_then(|p| p.file_name().map(|f| f.to_string_lossy().to_lowercase()))
+        .unwrap_or_default();
+
+    let is_uninstall_exe = exe_name.contains("uninstall") || exe_name.contains("unregister");
+    let has_uninstall_flag = args.iter().any(|a| {
+        let lower = a.to_lowercase();
+        lower == "uninstall" || lower == "unregister" || lower == "/uninstall" || lower == "-uninstall" || lower == "--uninstall"
+    });
+
+    if is_uninstall_exe || has_uninstall_flag {
+        if let Err(err) = bruh::uninstall() {
+            eprintln!("{err}");
+            return Err(1);
+        }
+        println!("uninstalled BRUH-BETTER successfully");
+        return Ok(());
+    }
+
     if args.len() < 2 {
         print_usage();
         return Err(1);
