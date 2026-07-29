@@ -96,6 +96,55 @@ pub fn decode_image(input: &Path, output: &Path) -> Result<(), String> {
     image.save_as_png(output)
 }
 
+pub fn uninstall() -> Result<(), String> {
+    #[cfg(target_os = "windows")]
+    {
+        use std::process::Command;
+
+        let app_dir = std::env::var("LOCALAPPDATA")
+            .map(|p| std::path::PathBuf::from(p).join("BRUH-BETTER"))
+            .unwrap_or_default();
+        let dll_path = app_dir.join("bruh_thumb.dll");
+        if dll_path.exists() {
+            let _ = Command::new("regsvr32")
+                .args(["/u", "/s", &dll_path.to_string_lossy()])
+                .status();
+        }
+
+        let keys_to_delete = [
+            r"HKCU\Software\Classes\.bruh",
+            r"HKCU\Software\Classes\bruhfile",
+            r"HKCU\Software\Classes\*\shell\Convert to .bruh",
+            r"HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall\BRUH-BETTER",
+        ];
+
+        for key in keys_to_delete {
+            let _ = Command::new("reg")
+                .args(["delete", key, "/f"])
+                .status();
+        }
+
+        if let Ok(user_profile) = std::env::var("USERPROFILE") {
+            let desktop_lnk = std::path::PathBuf::from(&user_profile).join("Desktop").join("BRUH-BETTER Image Viewer.lnk");
+            let _ = std::fs::remove_file(desktop_lnk);
+        }
+        if let Ok(appdata) = std::env::var("APPDATA") {
+            let start_lnk = std::path::PathBuf::from(&appdata)
+                .join(r"Microsoft\Windows\Start Menu\Programs")
+                .join("BRUH-BETTER Image Viewer.lnk");
+            let _ = std::fs::remove_file(start_lnk);
+        }
+
+        if app_dir.exists() {
+            let cmd_str = format!("timeout /t 1 /nobreak >nul & rmdir /s /q \"{}\"", app_dir.display());
+            let _ = Command::new("cmd")
+                .args(["/C", &cmd_str])
+                .spawn();
+        }
+    }
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

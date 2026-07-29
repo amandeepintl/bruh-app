@@ -59,6 +59,13 @@ pub fn run(args: Vec<String>) -> Result<(), i32> {
             }
             println!("decoded {} -> {}", input.display(), output.display());
         }
+        "unregister" | "uninstall" => {
+            if let Err(err) = bruh::uninstall() {
+                eprintln!("{err}");
+                return Err(1);
+            }
+            println!("uninstalled BRUH-BETTER successfully");
+        }
         _ => {
             eprintln!("unknown command: {command}");
             return Err(1);
